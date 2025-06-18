@@ -8,8 +8,8 @@ Full-stack app using NASA APIs with React, Node.js and Express.
 cd backend
 npm install
 ```
-### Create .env file
-In the root folder of the project, create a .env file and add your NASA API key
+### Create .env file inside backend
+In the backend folder, create a .env file and add your NASA API key
 
 NASA_API_KEY=your_actual_nasa_api_key_here
 
@@ -22,5 +22,13 @@ npm start
 ```bash
 cd frontend
 npm install
+```
+### Create .env file inside frontend
+In the frontend folder, create a .env file and add your REACT_APP_API_BASE_URL
+
+REACT_APP_API_BASE_URL=react_app_base_url
+
+### Start the server
+```
 npm start
 ```
