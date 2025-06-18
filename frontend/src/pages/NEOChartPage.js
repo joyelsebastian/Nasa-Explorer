@@ -52,7 +52,7 @@ function NEOChartPage() {
             const formattedEnd = endDate.toISOString().split('T')[0];
 
             const res = await axios.get(
-                `http://localhost:5000/api/nasa/neo?start_date=${formattedStart}&end_date=${formattedEnd}`
+                `${process.env.REACT_APP_API_BASE_URL}/neo?start_date=${formattedStart}&end_date=${formattedEnd}`
             );
 
             const neoData = res.data.near_earth_objects;

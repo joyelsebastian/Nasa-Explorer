@@ -49,7 +49,7 @@ function EonetPage() {
       const params = { days, status };
       if (category) params.category = category;
 
-      const res = await axios.get('http://localhost:5000/api/nasa/eonet', { params });
+      const res = await axios.get('${process.env.REACT_APP_API_BASE_URL}/eonet', { params });
       setEvents(res.data.events || []);
     } catch (err) {
       setError('Failed to fetch events');
