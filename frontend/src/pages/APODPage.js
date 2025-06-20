@@ -25,7 +25,7 @@ function APODPage() {
 
     try {
       const formattedDate = formatDateToLocalISO(date);
-      const res = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/apod?date=${formattedDate}`);
+      const res = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/api/nasa/apod?date=${formattedDate}`);
       setData(res.data);
     } catch (err) {
       // Graceful fallback if today's APOD is unavailable (e.g., due to publishing delays)
@@ -38,7 +38,7 @@ function APODPage() {
           yesterday.setDate(yesterday.getDate() - 1);
           const yesterdayStr = formatDateToLocalISO(yesterday);
 
-          const res = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/apod?date=${yesterdayStr}`);
+          const res = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/api/nasa/apod?date=${yesterdayStr}`);
           setData(res.data);
           setInfoMessage("Today's APOD is not available yet. Showing yesterday's APOD instead.");
         } catch {
